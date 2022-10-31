@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    public float limiteX = 10;
-    public float limiteY = 6;
+    public float limiteX = 9.23f;
+    public float limiteY = 5.30f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +25,16 @@ public class Teleporter : MonoBehaviour
         }
 
 
-       
+        if (transform.position.x > limiteX)
+        {
+            transform.position = new Vector3(-limiteX, transform.position.y);
+
+        }
+        if (transform.position.x < -limiteX)
+        {
+            transform.position = new Vector3(limiteX, transform.position.y);
+
+        }
+
     }
 }
